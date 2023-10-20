@@ -1,20 +1,20 @@
 <form class="form-inline">
     <div class="row d-flex col-lg-12">
         <div class="form-group col-3">
-            <select  class="form-select" [(ngModel)]="selectedCurrencie" [ngModelOptions]="{standalone: true}">
-                <option *ngFor="let currencie of currencies">{{currencie}}</option>
+            <select  class="form-select" [(ngModel)]="selectedCurrency" [ngModelOptions]="{standalone: true}" (change)="changeCurrency(selectedCurrency)">
+                <option *ngFor="let currency of currencies">{{currency}}</option>
             </select>
         </div>
-        <div class="form-group col-3"  *ngIf="selectedCurrencie != currencies[0]">
+        <div class="form-group col-3"  *ngIf="selectedCurrency != currencies[0]">
             <input type="USD" class="form-control" id="USD" name="USD"  disabled>
         </div>
-        <div class="form-group col-3" *ngIf="selectedCurrencie != currencies[1]">
-            <input type="COP" class="form-control" id="COP" name="COP" disabled>
+        <div class="form-group col-3" *ngIf="selectedCurrency != currencies[1]">
+            <input type="COP" class="form-control" id="COP" name="COP" disable>
         </div>
-        <div class="form-group col-3" *ngIf="selectedCurrencie != currencies[2]">
+        <div class="form-group col-3" *ngIf="selectedCurrency != currencies[2]">
             <input type="EU" class="form-control" id="EU" name="EU" disabled>
         </div>
-        <div class="form-group col-3" *ngIf="selectedCurrencie != currencies[3]">
+        <div class="form-group col-3" *ngIf="selectedCurrency != currencies[3]">
             <input type="GBP" class="form-control" id="GBP" name="GBP" disabled>
         </div>
     </div>

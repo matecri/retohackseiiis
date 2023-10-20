@@ -1,12 +1,14 @@
 <app-header></app-header>
+
 <mat-card>
     <mat-card-content>
-        <app-convertor></app-convertor>
+        <app-convertor [currencies]="currencies" (changeCurrencyEvent)="onCurrencyChange($event)"></app-convertor>
     </mat-card-content>
 </mat-card>
 
-
-<app-graphics [currency]="'USD'"></app-graphics>
+<div>
+    <h1>SELECTED: {{selectedCurrency}} </h1>
+    <app-graphics *ngFor="let i in currencies" [currency]="i"></app-graphics>
+</div>
 
 <app-footer></app-footer>
-<!-- <router-outlet></router-outlet> -->

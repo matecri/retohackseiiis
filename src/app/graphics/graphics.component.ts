@@ -24,15 +24,11 @@ export class GraphicsComponent implements OnInit {
 
   createChart() {
     const canvas = document.getElementById('exchangeRateChart') as HTMLCanvasElement;
-    //const ctx = canvas.getContext('2d');
 
-    // Create your chart using Chart.js
     const chart = new Chart(canvas, {
       type: 'line',
       data: this.data,
-      options: {
-        // Configure chart options
-      }
+      options: {}
     });
   }
 }

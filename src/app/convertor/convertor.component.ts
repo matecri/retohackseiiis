@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -8,12 +8,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class ConvertorComponent implements OnInit {
 
-  currencies = ['USD', 'COP', 'EU', 'GBP'];
-  selectedCurrencie = this.currencies[0];
+  @Input()
+  currencies!: string[];
+
+  @Output() changeCurrencyEvent = new EventEmitter<string>();
+
+  selectedCurrency!: string;
 
   constructor(){}
 
   ngOnInit(): void {
-    
+    this.selectedCurrency = this.currencies[0]
   }
+
+  changeCurrency(currency: string) {
+    this.selectedCurrency = currency
+    this.changeCurrencyEvent.emit(currency)
+  }
+
 }
