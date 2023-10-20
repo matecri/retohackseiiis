@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ServiceService } from '../service/service.service';
 
@@ -10,22 +10,31 @@ import { ServiceService } from '../service/service.service';
 })
 export class ConvertorComponent implements OnInit {
 
-  currencies = ['USD', 'COP', 'EU', 'GBP'];
+  @Input()
+  currencies!: string[];
+
+  @Output() changeCurrencyEvent = new EventEmitter<string>();
+
   USD = 0;
   COP = 0;
   EUR = 0;
   GBP = 0;
-  selectedCurrencie = this.currencies[0];
+
   value = 0;
   rates: any;
   dataList: { currencyCode: string; exchangeRate: number }[] = [];
+
+  selectedCurrency!: string;
+
   constructor(private service:ServiceService){}
   listData = [];
   ngOnInit(): void {
+    this.selectedCurrency = this.currencies[0]
     this.cargarDatos();
   }
-  cargarDatos():void{
-    this.service.convert(this.selectedCurrencie).subscribe(
+
+  cargarDatos(): void {
+    this.service.convert(this.selectedCurrency).subscribe(
     data=>{      
       this.rates = data.rates;
     },
@@ -35,6 +44,11 @@ export class ConvertorComponent implements OnInit {
      
     );
 }
+
+  changeCurrency(currency: string) {
+    this.selectedCurrency = currency
+    this.changeCurrencyEvent.emit(currency)
+  }
 
 convertCurrencie(): void {
   for (const currencyCode in this.rates) {
