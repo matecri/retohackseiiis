@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatCardModule,
     CommonModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
