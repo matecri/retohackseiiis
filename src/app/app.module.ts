@@ -7,7 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { GraphicsComponent } from './graphics/graphics.component';
 import { ConvertorComponent } from './convertor/convertor.component';
-
+import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,10 @@ import { ConvertorComponent } from './convertor/convertor.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    MatCardModule,
+    CommonModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
