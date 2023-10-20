@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'hackaseiiis';
+
+  currencies = ['USD', 'COP', 'EUR', 'GBP'];
+  selectedCurrency = this.currencies[0];
+
+  onCurrencyChange(currency: string) {
+    this.selectedCurrency = currency
+  }
 }
