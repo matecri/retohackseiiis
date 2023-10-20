@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { GraphicsComponent } from './graphics/graphics.component';
 import { ConvertorComponent } from './convertor/convertor.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
