@@ -9,21 +9,23 @@ import { Chart } from 'chart.js/auto';
 
 export class GraphicsComponent implements OnInit {
   @Input()
-  currency: string = "USD"
+  currency!: string
 
   data = {
     datasets: [{
-      data: [{ x: '2016-12-25', y: 20 }, { x: '2016-12-26', y: 10 }, { x: '2017-12-26', y: 240 }]
+      data: [{ x: '2016-12-25', y: 20 }, 
+      { x: '2016-12-26', y: 10 }, 
+      { x: '2017-12-26', y: 240 }, 
+      { x: '2017-12-29', y: 320 }]
     }]
   }
 
   ngOnInit() {
-    //data = graphsservice
     this.createChart()
   };
 
   createChart() {
-    const canvas = document.getElementById('exchangeRateChart') as HTMLCanvasElement;
+    const canvas = document.getElementById("exchangeRateChart") as HTMLCanvasElement;
 
     const chart = new Chart(canvas, {
       type: 'line',

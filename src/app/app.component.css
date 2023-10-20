@@ -1,0 +1,7 @@
+.header {
+    background-color: #0c0636;
+}.box-graphics {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
