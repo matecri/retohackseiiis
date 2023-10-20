@@ -2,7 +2,7 @@
     <div class="row d-flex col-lg-12">
         <div class="form-group col-3">
             <label>Currencie</label>
-            <select  class="form-select" [(ngModel)]="selectedCurrencie" [ngModelOptions]="{standalone: true}" 
+            <select  class="form-select" [(ngModel)]="selectedCurrency" [ngModelOptions]="{standalone: true}" 
             (change)="cargarDatos()">
                 <option *ngFor="let currencie of currencies">{{currencie}}</option>
             </select>
@@ -12,19 +12,19 @@
             <input type="value" class="form-control" id="value" name="value" [(ngModel)]="value"
             (keydown)="convertCurrencie()">
         </div>
-        <div class="form-group col-2"  *ngIf="selectedCurrencie != currencies[0]">
+        <div class="form-group col-2"  *ngIf="selectedCurrency != currencies[0]">
             <label>USD</label>
             <input type="USD" class="form-control" id="USD" name="USD" [(ngModel)]="USD"  disabled>
         </div>
-        <div class="form-group col-2" *ngIf="selectedCurrencie != currencies[1]">
+        <div class="form-group col-2" *ngIf="selectedCurrency != currencies[1]">
             <label>COP</label>
             <input type="COP" class="form-control" id="COP" name="COP" [(ngModel)]="COP" disabled>
         </div>
-        <div class="form-group col-2" *ngIf="selectedCurrencie != currencies[2]">
+        <div class="form-group col-2" *ngIf="selectedCurrency != currencies[2]">
             <label>EU</label>
             <input type="EU" class="form-control" id="EU" name="EU" [(ngModel)]="EUR" disabled>
         </div>
-        <div class="form-group col-2" *ngIf="selectedCurrencie != currencies[3]">
+        <div class="form-group col-2" *ngIf="selectedCurrency != currencies[3]">
             <label>GBP</label>
             <input type="GBP" class="form-control" id="GBP" name="GBP" [(ngModel)]="GBP" disabled>
         </div>
