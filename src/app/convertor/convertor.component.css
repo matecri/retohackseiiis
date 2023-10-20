@@ -1,0 +1,44 @@
+div .form-select{
+    background-color: #059b9a;
+    color: white;
+    border-radius: 25px;
+}
+div .form-select:focus{
+    background-color: white;
+    color: black;
+}
+
+div .form-control{
+    background-color: #095169;
+    color: white;
+}
+
+div .form-control{
+    background-color: #095169;
+    color: white;
+}
+
+div .form-control::placeholder{
+    color: white;
+}
+
+.form-inline{
+    height: 30vh;
+    padding-top: 4%;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.form-select{
+    height: 130px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.form-control{
+    height: 130px;
+    font-size: 60px;
+    text-align: center;
+}
+
