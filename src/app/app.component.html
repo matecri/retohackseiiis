@@ -1,5 +1,8 @@
-<app-header></app-header>
-
+<mat-card class="header">
+    <mat-card-content>
+        <app-header></app-header>
+    </mat-card-content>
+</mat-card>
 <mat-card>
     <mat-card-content>
         <app-convertor [currencies]="currencies" (changeCurrencyEvent)="onCurrencyChange($event)"></app-convertor>
