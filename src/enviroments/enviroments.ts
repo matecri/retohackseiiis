@@ -5,7 +5,7 @@
 export const environments = {
     production: false,
     latest :'https://openexchangerates.org/api/latest.json',
-    convert :'https://openexchangerates.org/api/convert',
+    convert :'https://openexchangerates.org/api/latest.json?app_id=74e13acbd59d494db7eec637d784aba2',
     historical: "https://openexchangerates.org/api/historical/:date.json"
   };
   
